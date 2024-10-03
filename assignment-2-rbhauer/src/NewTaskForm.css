@@ -1,0 +1,26 @@
+.NewTaskForm
+{
+    background-color: chartreuse;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.SubmitButton
+{
+    width: 90%;
+   
+}
+
+.SubmitSection
+{
+    text-align: center;
+   
+}
+
+.mb-3
+{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
