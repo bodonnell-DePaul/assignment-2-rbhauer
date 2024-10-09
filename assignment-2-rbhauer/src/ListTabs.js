@@ -4,8 +4,16 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import {todos} from './todoItems.js';
 import './ListTabs.css'
+import React, {useState} from "react";
 
 function ListTabs() {
+    const [value, setValue] = useState("");
+    function handleChange(index, e)
+    {
+    todos[index].dueDate = e.target.value; 
+    setValue(e.target.value);
+    }
+
   return (
     <div className= "List_Tabs">
         <Tab.Container id="ListTabs" defaultActiveKey="#link0">
@@ -22,10 +30,11 @@ function ListTabs() {
             <Col sm={8}>
             <Tab.Content contentEditable="true">
                 {todos.map((todos,index) => (
+                    
                     <Tab.Pane className = "content" eventKey={index.toString()} contentEditable="true" >
                         {todos.description}
                         <div className= "dateInput" contentEditable="true">
-                            <input type="date" value={todos.dueDate} contentEditable="true" >
+                            <input type="date" value={todos.dueDate} contentEditable="true" onChange={(e) => handleChange(index, e)}>
                             </input>
                         </div>
                         </Tab.Pane>
@@ -38,6 +47,7 @@ function ListTabs() {
     </div>
   );
 }
+
 
 function tabColor(inDate)
 {
