@@ -20,12 +20,12 @@ function ListTabs() {
             </ListGroup>
             </Col>
             <Col sm={8}>
-            <Tab.Content >
+            <Tab.Content contentEditable="true">
                 {todos.map((todos,index) => (
                     <Tab.Pane className = "content" eventKey={index.toString()} contentEditable="true" >
                         {todos.description}
-                        <div className= "dateInput">
-                            <input type="date" contentEditable="true" value={todos.dueDate} >
+                        <div className= "dateInput" contentEditable="true">
+                            <input type="date" value={todos.dueDate} contentEditable="true" >
                             </input>
                         </div>
                         </Tab.Pane>
@@ -45,8 +45,6 @@ function tabColor(inDate)
     const fourDays = new Date(Date.now() + 4 * 24 * 60 * 60 * 1000);
     const twoDays = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000);
     const check = new Date(inDate); 
-    console.log(check);
-    console.log(sevenDays);
 
     if (check < twoDays)
     {
